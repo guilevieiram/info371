@@ -4,7 +4,7 @@ public class UnionFindNaive extends UnionFind{
 
     private int [] rep;
 
-    public UnionFindNaive (int fieldSize) {
+    public void initialize (int fieldSize) {
         size = fieldSize;
         rep = new int [size];
         for (int i = 0; i < size; i++) rep[i] = i;

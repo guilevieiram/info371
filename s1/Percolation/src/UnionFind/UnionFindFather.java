@@ -4,7 +4,7 @@ public class UnionFindFather extends UnionFind{
     
     public int [] father;
 
-    public UnionFindFather(int fieldSize){
+    public void initialize(int fieldSize){
         size = fieldSize;
         father = new int [size];
         for(int i = 0; i < size; i++) father[i] = i;

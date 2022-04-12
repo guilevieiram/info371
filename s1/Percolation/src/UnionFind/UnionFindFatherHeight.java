@@ -4,8 +4,8 @@ public class UnionFindFatherHeight extends UnionFindFather{
 
     public int [] height;
 
-    public UnionFindFatherHeight(int fieldSize){
-        super(fieldSize);
+    public void initialize(int fieldSize){
+        super.initialize(fieldSize);
         height = new int [size];
         for(int i = 0; i < size; i ++) height[i] = 1;
     }

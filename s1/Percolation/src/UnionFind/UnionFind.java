@@ -5,6 +5,7 @@ public abstract class UnionFind {
 
     public abstract int find (int i);
     public abstract void union (int i, int j);
+    public abstract void initialize (int fieldSize);
 
     public void show() {
         for (int counter = 0; counter < this.size; counter ++){
