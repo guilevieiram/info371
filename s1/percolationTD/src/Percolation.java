@@ -1,5 +1,5 @@
 public class Percolation {
-    public static int size = 100;
+    public static int size = 10;
     public static int length = size * size;
     public static boolean[] grid = new boolean[length];
 
@@ -8,9 +8,7 @@ public class Percolation {
 
     public static void main(String[] args) {
 
-        // getting SIGKILL errors probably because of the tests expecting eclipse;
-        int n = 10;
-        n = Integer.parseInt(args[0]);
+        int n = Integer.parseInt(args[0]);
 
         long timeStart = System.currentTimeMillis();
         double average = monteCarlo(n);
@@ -46,12 +44,12 @@ public class Percolation {
     }
 
     public static double percolation(){
-        boolean isPerc;
+        boolean isPerc = false;
         int shadowPosition;
-        do{
+        while(!isPerc){
             shadowPosition = randomShadow();
             isPerc= isPercolation(shadowPosition);
-        }while(!isPerc);
+        }
         return whitesPercentages();
     }
 
