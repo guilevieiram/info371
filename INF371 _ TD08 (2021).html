@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>INF371 / TD08 (2021)</title>
+
+    <link rel="shortcut icon" href="https://grader.dix.polytechnique.fr/static/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://grader.dix.polytechnique.fr/static/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="https://grader.dix.polytechnique.fr/static/favicon.png" type="image/png">
+
+    
+<meta name="author" content="Xavier Rival">
+<meta name="author" content="Jean-Marie Madiot">
+<meta name="author" content="Julien Signoles">
+<meta name="author" content="Benjamin Werner">
+<style>
+  div.sourceCode{background-color: #efefef;}
+  :not(pre) > code{color: #d00; background-color: #ffeeee; padding: 0 5px;}
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+</style>
+<style>
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+<!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+<![endif]-->
+
+
+
+    <script type="text/javascript" src="INF371%20_%20TD08%20(2021)_files/jquery.js"></script>
+
+    <link rel="stylesheet" href="INF371%20_%20TD08%20(2021)_files/bootstrap.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="INF371%20_%20TD08%20(2021)_files/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <script src="INF371%20_%20TD08%20(2021)_files/popper.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+    <script src="INF371%20_%20TD08%20(2021)_files/bootstrap.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <script src="INF371%20_%20TD08%20(2021)_files/clipboard.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
+
+    <script src="INF371%20_%20TD08%20(2021)_files/moment.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+
+    <script src="INF371%20_%20TD08%20(2021)_files/tempusdominus-bootstrap-4.js" integrity="sha256-z0oKYg6xiLq3yJGsp/LsY9XykbweQlHl42jHv2XTBz4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="INF371%20_%20TD08%20(2021)_files/tempusdominus-bootstrap-4.css" integrity="sha256-XPTBwC3SBoWHSmKasAk01c08M6sIA5gF5+sRxqak2Qs=" crossorigin="anonymous">
+
+    
+<script src="INF371%20_%20TD08%20(2021)_files/bootstrap-autocomplete.js"></script>
+
+
+    <link rel="stylesheet" href="INF371%20_%20TD08%20(2021)_files/style.css">
+  </head>
+  <body>
+    <nav class="navbar fixed-top navbar-expand-sm navbar-light bg-light">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar-content">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+              
+              INF371 - TD08 (2021)
+              
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="https://grader.dix.polytechnique.fr/">Home</a>
+              
+              
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="https://grader.dix.polytechnique.fr/agns/INF371/TD08/2021/uploads/:my/">See my uploads</a>
+              
+              
+              
+              
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">CSE101</h6>
+                
+              
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">CSE102</h6>
+                
+              
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">CSE201</h6>
+                
+              
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">CSE203</h6>
+                
+              
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">CSE305</h6>
+                
+              
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">INF371</h6>
+                
+                <a class="dropdown-item " href="https://grader.dix.polytechnique.fr/agns/INF371/TD01/2021/">
+                  <span class="fas fa-caret-right pr-2"></span>
+                  TD01 - 2021
+                </a>
+                
+                <a class="dropdown-item " href="https://grader.dix.polytechnique.fr/agns/INF371/TD03/2021/">
+                  <span class="fas fa-caret-right pr-2"></span>
+                  TD03 - 2021
+                </a>
+                
+                <a class="dropdown-item " href="https://grader.dix.polytechnique.fr/agns/INF371/TD05/2021/">
+                  <span class="fas fa-caret-right pr-2"></span>
+                  TD05 - 2021
+                </a>
+                
+                <a class="dropdown-item " href="https://grader.dix.polytechnique.fr/agns/INF371/TD06/2021/">
+                  <span class="fas fa-caret-right pr-2"></span>
+                  TD06 - 2021
+                </a>
+                
+                <a class="dropdown-item active" href="https://grader.dix.polytechnique.fr/agns/INF371/TD08/2021/">
+                  <span class="fas fa-caret-right pr-2"></span>
+                  TD08 - 2021
+                </a>
+                
+              
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">INF442</h6>
+                
+              
+                <div class="dropdown-divider"></div>
+                <h6 class="dropdown-header">INF646</h6>
+                
+              
+              
+              
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav my-2 my-lg-0">
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              Guilherme Vieira Manhaes
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="https://grader.dix.polytechnique.fr/logout/?next=/agns/INF371/TD08/2021/">Logout</a>
+            </div>
+          </li>
+          
+        </ul>
+      </div>
+
+      
+      <div id="status">
+        <div class="text-nowrap">
+          <a class="badge badge-pill badge-success" id="status-ok" href="https://grader.dix.polytechnique.fr/agns/INF371/TD08/2021/uploads/:my/" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">0</a>
+          <a class="badge badge-pill badge-warning" id="status-mb" href="https://grader.dix.polytechnique.fr/agns/INF371/TD08/2021/uploads/:my/" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">0</a>
+          <a class="badge badge-pill badge-danger" id="status-ko" href="https://grader.dix.polytechnique.fr/agns/INF371/TD08/2021/uploads/:my/" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="">0</a>
+        </div>
+      </div>
+      
+    </nav>
+
+    
+
+    <div class="container-fluid">
+      
+
+      <main id="content">
+        
+  
+        
+
+
+
+
+
+<div class="alert alert-warning">
+  This assignment will be closed on June 21, 2022 (23:59:59).
+</div>
+
+
+
+<script>
+function prepare_input_file() {
+  $('.input-file').before(
+    function() {
+      if (!$(this).prev().hasClass('input-ghost')) {
+        var element = $('<input>', {
+          'type'     : 'file',
+          'class'    : 'input-ghost',
+          'style'    : 'display: none;',
+          'multiple' : 'multiple',
+        });
+        element.attr('name', $(this).attr('name'));
+        element.change(function() {
+          var nfiles = element.get(0).files ? element.get(0).files.length : 1;
+          var label  = element.val().replace(/\\/g, '/').replace(/.*\//, '');
+
+          if (nfiles > 1)
+            label = nfiles + ' files selected';
+          element.next(element).find('input').val(label);
+        });
+        $(this).find('button.btn-choose').click(function() {
+          element.click();
+        });
+        $(this).find('input').css('cursor', 'pointer');
+        $(this).find('input').mousedown(function() {
+          $(this).parents('.input-file').prev().click();
+          return false;
+        });
+        return element;
+      }
+    }
+  );
+}
+
+$(document).ready(function() {
+  prepare_input_file();
+  $('.autoselect').autoComplete({
+      resolverSettings: {
+          url: '/:autocomplete/:users/'
+      }
+  });
+  $('.dtpicker').datetimepicker();
+});
+</script>
+
+
+
+
+
+
+<header id="title-block-header">
+<h1 class="title">Calculatrice à mémoire avec interface graphique</h1>
+<p class="author">
+<span>Xavier Rival</span>, <span>Jean-Marie Madiot</span>, <span>Julien Signoles</span>, <span>Benjamin Werner</span>
+</p>
+</header>
+<div class="toc">
+<ul>
+<li><a href="#le-coeur-de-notre-calculatrice-opérations-de-base">Le coeur de notre calculatrice : opérations de base</a>
+<ul>
+<li><a href="#description-de-létat-de-la-calculatrice">Description de l’état de la calculatrice</a></li>
+<li><a href="#calcul-des-opérations-de-base">Calcul des opérations de base</a></li>
+<li><a href="#commandes-pour-le-contrôle-de-lévaluation-dexpressions">Commandes pour le contrôle de l’évaluation d’expressions</a></li>
+<li><a href="#mémoire">Mémoire</a></li>
+</ul></li>
+<li><a href="#une-calculatrice-textuelle">Une calculatrice textuelle</a>
+<ul>
+<li><a href="#première-version-du-tokenizer">Première version du tokenizer</a></li>
+<li><a href="#gestion-des-opérateurs-et-parenthèses">Gestion des opérateurs et parenthèses</a></li>
+<li><a href="#nombres-décimaux-et-nombres-négatifs">Nombres décimaux et nombres négatifs</a></li>
+<li><a href="#ré-initialisation-et-mémoire">Ré-initialisation et mémoire</a></li>
+</ul></li>
+<li><a href="#une-calculatrice-graphique">Une calculatrice graphique</a>
+<ul>
+<li><a href="#application-et-fenêtre-graphiques">Application et fenêtre graphiques</a></li>
+<li><a href="#boutons">Boutons</a></li>
+<li><a href="#clavier">Clavier</a></li>
+</ul></li>
+</ul>
+</div>
+<p>Le but de ce TD sur deux séances est double : dans un premier temps, 
+il permettra de programmer le coeur d’une calculatrice capable d’évaluer
+ des opérations de bas niveau tandis que, dans un second temps, il 
+donnera l’occasion de développer deux interfaces, l’une textuelle et 
+l’autre graphique. Il fournit donc l’occasion de s’initier à la 
+programmation graphique et événementielle.</p>
+<p>Nous allons ainsi construire progressivement une calculatrice qui ressemblera à ceci :</p>
+<div class="figure">
+<p><img src="INF371%20_%20TD08%20(2021)_files/calc.png"></p>
+</div>
+<h3 id="le-coeur-de-notre-calculatrice-opérations-de-base">Le coeur de notre calculatrice : opérations de base</h3>
+<p>Cette partie a pour but de concevoir le coeur de la calculatrice, qui
+ en stockera l’état interne et pourra effectuer tous les calculs. Cette 
+calculatrice traitera des expressions structurées qui seront écrite 
+suivant une syntaxe classique que l’on étudiera dans la partie suivante.
+ Pour gérer l’évaluation pas à pas de telles expressions, la 
+calculatrice va devoir maintenir un état interne décrivant les valeurs 
+et opérations entrées par l’utilisateur. À ce stade, il n’est pas encore
+ question de lire une expression en entrée mais simplement de traiter 
+une suite de “commandes” (comme la lecture d’un nombre ou d’un 
+opérateur) qui seront envoyées à la calculatrice dans l’ordre de lecture
+ de l’expression, de gauche à droite.</p>
+<h4 id="description-de-létat-de-la-calculatrice">Description de l’état de la calculatrice</h4>
+<p>Pour décrire l’état de la calculatrice, nous allons utiliser deux 
+piles comme représentation de l’état de la calculatrice. La première, <code>numbers</code>,
+ sert à enregistrer les nombres décimaux à utiliser dans les prochains 
+calculs : lorsque toutes les opérations ont été calculées, elle contient
+ un seul nombre qui est le résultat final du calcul. La seconde pile, <code>operators</code>, contient, sous une forme symbolique, les opérations à effectuer. Par exemple, après la lecture de l’expression <code>5 + 12.34 * 2</code>, et avant d’effectuer le moindre calcul, <code>numbers</code> est une pile contenant (du bas vers le haut) <code>5</code>, <code>12.34</code> et <code>2</code>, alors qu’<code>operators</code> contient <code>Operator.PLUS</code> et <code>Operator.MULT</code>, représentations symboliques de <code>+</code> et <code>*</code> respectivement.</p>
+<p>Pour représenter les piles, nous allons utiliser celles fournies par la bibliothèque standard de Java, <code>java.util.Stack&lt;E&gt;</code> dont <a href="https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html">la documentation est disponible en ligne</a>. Il s’agit d’une classe générique paramétrée par le type <code>E</code> des éléments contenus dans la pile. Dans la suite, la première pile sera de type <code>java.util.Stack&lt;Double&gt;</code> pour contenir des doubles, tandis que la seconde sera de type <code>java.util.Stack&lt;Operator&gt;</code> pour contenir des opérateurs.</p>
+<h6 id="exercice-1">Exercice 1</h6>
+<ul>
+<li><p>Créer un fichier <code>Operator.java</code> contenant le type énuméré définissant la représentation symbolique des opérateurs :</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb1-1"><a aria-hidden="true" href="#cb1-1"></a><span class="kw">public</span> <span class="kw">enum</span> Operator { PLUS, MINUS, MULT, DIV }</span></code></pre></div></li>
+<li><p>Créer une classe <code>Calculator</code> contenant les deux piles <code>numbers</code> et <code>operators</code>. La première est de type <code>java.util.Stack&lt;Double&gt;</code> tandis que la seconde est de type <code>java.util.Stack&lt;Operator&gt;</code>. Définir un constructeur sans argument pour cette classe les initialisant. Surcharger également la fonction <code>toString</code> de <code>Calculator</code> de façon à retourner le contenu des deux piles sous forme d’une chaîne de caractères. Si <code>numbers</code> (resp. <code>operators</code>) contient (de bas en haut) <code>2</code>, <code>12.34</code> et <code>5</code> (resp. <code>*</code> et <code>+</code>), la chaîne retournée sera :</p>
+<pre><code>[2.0, 12.34, 5.0]
+[MULT, PLUS]</code></pre>
+<p>Vous pourrez utiliser la méthode <code>.toString()</code> de la classe <code>java.util.Stack&lt;?&gt;</code>.</p></li>
+<li><p>Ajouter deux méthodes <code>void pushDouble(double d)</code> et <code>void pushOperator(Operator o)</code> à la classe <code>Calculator</code>.</p></li>
+<li><p>Écrire une méthode publique <code>getResult</code> qui retourne le sommet de <code>numbers</code> (sans en modifier le contenu), ou bien qui lève une exception (on utilisera <code>RuntimeException</code>) dans le cas où celle-ci est vide.</p></li>
+</ul>
+<div class="alert alert-warning">
+<p>Il serait naturel que les champs <code>numbers</code> et <code>operators</code> aient une visibilité <code>private</code>.
+ Cependant, pour permettre aux tests en ligne de vérifier le bon 
+fonctionnement de vos classes, il est exceptionnellement demandé de les 
+rendre <code>public</code>.</p>
+</div>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-1"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/1/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java</div>
+</div>
+<h4 id="calcul-des-opérations-de-base">Calcul des opérations de base</h4>
+<h6 id="exercice-2">Exercice 2</h6>
+<p>Nous allons maintenant nous intéresser aux opérations arithmétique et à leur évaluation.</p>
+<ul>
+<li><p>Écrire une méthode publique <code>void executeBinOperator( Operator op )</code> qui applique l’opération <code>op</code> aux deux arguments placés au sommet de la pile <code>numbers</code> après avoir retiré ceux-ci, et qui placera le résultat au sommet de la pile (dans cette méthode on ignore la pile <code>operators</code>).</p>
+<p>On suppose qu’on souhaite évaluer l’expression <code>1+2-3</code>. Placer <code>1</code>, <code>2</code> et <code>3</code> sur la pile, puis évaluer <code>-</code> et enfin évaluer <code>+</code>. Que pensez vous du résultat ?</p>
+<p>Faire de même pour <code>1-2+3</code>. Placer <code>1</code>, <code>2</code> et <code>3</code> sur la pile, puis évaluer <code>+</code> et enfin évaluer <code>-</code>. Qu’observez vous ?</p></li>
+</ul>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-2"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/2/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java</div>
+</div>
+<h6 id="exercice-3">Exercice 3</h6>
+<p>Pour prendre en compte correctement la priorité de chaque opérateur, nous allons devoir utiliser intelligemment la pile <code>operators</code>, suivant l’algorithme vu en cours. En particulier, lorsque la calculatrice recevra une “commande” correspondant à un opérateur <code>op</code>, on commencera par évaluer une partie des opérateurs déjà sur la pile <code>operators</code> avant de placer <code>op</code> au sommet de cette même pile (<a href="https://fr.wikipedia.org/wiki/Algorithme_Shunting-yard">algorithme Shunting-yard</a>).
+ Ainsi, nous allons obtenir une calculatrice capable à ce stade de 
+recevoir deux types de “commandes”, qui correspondent respectivement à 
+l’entrée par l’utilisateur d’un nombre et d’un opérateur, et dans la 
+suite nous allons enrichir ce langage de commandes.</p>
+<ul>
+<li><p>Écrire une méthode statique privée <code>precedence</code> 
+prenant un opérateur en argument et retournant un entier correspondant à
+ la priorité de l’opérateur. Par exemple, on doit avoir <code>precedence(Operator.PLUS)</code> strictement inférieur à <code>precedence(Operator.MULT)</code>.</p></li>
+<li><p>Écrire une méthode <code>void commandOperator(Operator op)</code>
+ qui met à jour l’état de la calculatrice lorsque celle-ci reçoit la 
+commande qui correspond à cet opérateur. Ajouter également une méthode <code>void commandDouble(double d)</code> qui met à jour l’état de la calculatrice lorsque celle-ci reçoit une telle commande.</p></li>
+</ul>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-3"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/3/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java</div>
+</div>
+<h4 id="commandes-pour-le-contrôle-de-lévaluation-dexpressions">Commandes pour le contrôle de l’évaluation d’expressions</h4>
+<h6 id="exercice-4">Exercice 4</h6>
+<p>Nous ajoutons maintenant quelques commandes qui vont rendre notre 
+calculatrice vraiment utilisable, avec tout d’abord l’opérateur 
+d’évaluation <code>=</code>, puis les parenthèses et enfin la possibilité de réinitialiser l’état de la calculatrice.</p>
+<p>Ajouter une méthode <code>void commandEqual()</code> qui évalue 
+l’ensemble des opérations actuellement sur la pile. Tester avec quelques
+ expressions (dont les deux exemples fournis plus haut).</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-4"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/4/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java</div>
+</div>
+<h6 id="exercice-5">Exercice 5</h6>
+<p>Ajouter deux méthodes <code>void commandLPar()</code> et <code>void commandRPar()</code>
+ décrivant l’ouverture et la fermeture de parenthèses. On veillera à 
+évaluer correctement le contenu d’une paire de parenthèses. On 
+recommande pour cela d’ajouter un élément <code>OPEN</code> au type énuméré <code>Operator</code>, et décrivant la position d’une parenthèse ouvrante sur la pile des opérateurs.</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-5"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/5/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java</div>
+</div>
+<h6 id="exercice-6">Exercice 6</h6>
+<p>Ajouter une méthode <code>void commandInit()</code> qui effectue la réinitialisation de l’état de la calculatrice.</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-6"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/6/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java</div>
+</div>
+<h4 id="mémoire">Mémoire</h4>
+<h6 id="exercice-7">Exercice 7</h6>
+<p>Ici, nous allons sauvegarder les résultats de nos calculs dans une 
+liste afin de pouvoir y accéder ensuite via des variables entières : la 
+variable <code>$i</code> représente le résultat du <em>i</em>-ème dernier calcul effectué (via la commande <code>=</code>). Ainsi, interpréter <code>"1+2*3=$1+$1+1=$1-$2="</code> doit produire un état où <code>8.0</code> est au sommet de la pile. Les résultats ne doivent pas être effacés par un appel à <code>commandInit()</code>.</p>
+<ul>
+<li><p>Ajouter un attribut <code>java.util.LinkedList&lt;Double&gt; results</code> dans la classe <code>Calculator</code>. Mettre à jour la méthode <code>commandEqual</code> pour stocker le résultat de chaque évaluation.</p></li>
+<li><p>Ajouter une méthode <code>void commandReadMemory(int i)</code> qui place au somme de la pile <code>numbers</code> la valeur du <code>i</code>-ème précédent calcul.</p></li>
+</ul>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-7"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/7/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java</div>
+</div>
+<h3 id="une-calculatrice-textuelle">Une calculatrice textuelle</h3>
+<p>Dans cette partie, nous allons réaliser une première interface, qui 
+repose sur la lecture de chaînes de caractères passées en argument. 
+C’est un premier pas vers une calculatrice plus facile à utiliser, 
+puisque nous allons bientôt pouvoir lui demander d’évaluer des formules 
+du type <code>2+3.5*(8-4.2)=</code>.</p>
+<p>Pour cela, nous allons écrire une autre classe appelée <code>Tokenizer</code>
+ qui va prendre en charge la lecture de chaînes de caractères dont elle 
+va extraire des commandes de base (souvent appelées “tokens”, d’où son 
+nom). L’extraction de commandes à partir d’une chaîne de caractères 
+n’est pas une opération simple, donc le tokenizer doit maintenir un état
+ interne décrivant le contexte à un instant de la lecture, et mettre à 
+jour cet état à chaque caractère rencontré.</p>
+<h4 id="première-version-du-tokenizer">Première version du tokenizer</h4>
+<p>Pour commencer, on considère que l’état interne du tokenizer est décrit par la donnée :</p>
+<ul>
+<li>d’un booléen <code>isStart</code>, qui est vrai si et seulement si 
+on est au début de la lecture d’une expression (il doit donc être vrai 
+au début, et après évaluation d’une commande ‘=’) ;</li>
+<li>d’un booléen <code>isIntNum</code>, qui est vrai si et seulement si on a commencé à lire un entier ;</li>
+<li>d’un nombre (de type <code>double</code>) <code>num</code> qui décrit la valeur du nombre en cours de lecture (lorsque le tokenizer est en train de lire un nombre) ; et</li>
+<li>de la donnée de l’état courant <code>calc</code> de la calculatrice.</li>
+</ul>
+<h6 id="exercice-8">Exercice 8</h6>
+<ul>
+<li><p>Définir la classe <code>Tokenizer</code> (avec les quatre champs ci-dessus) et un constructeur qui en initialise l’état interne.</p></li>
+<li><p>Ajouter une méthode publique <code>void readChar(char c)</code> à la classe <code>Tokenizer</code>, qui met à jour l’état interne du Tokenizer lors de la lecture du caractère <code>c</code>, qui ne pourra être qu’un chiffre ou le symbole <code>=</code>
+ (nous allons gérer un ensemble de caractères plus important dans les 
+questions suivantes –dans la mesure où le problème est relativement 
+complexe, nous vous guidons pas à pas).</p>
+<p>Pour vous guider, on vous donne quelques fonctions de la librairie 
+standard de Java qui pourraient vous être utiles. La fonction <code>Character.getNumericValue</code> permet d’obtenir la valeur numérique d’un caractère (<code>char</code>). Ainsi par exemple, <code>Character.getNumericValue('6')</code> retourne l’entier 6. La fonction <code>Character.isDigit</code> permet de déterminer si un <code>char</code> décrit un chiffre. Enfin, <code>Math.pow(x,y)</code> calcule <code>x</code> à la puissance <code>y</code>.</p></li>
+</ul>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-8"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/8/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java, Tokenizer.java</div>
+</div>
+<h6 id="exercice-9">Exercice 9</h6>
+<p>Ajouter une méthode publique <code>void readString(String s)</code> qui met à jour l’état du tokenizer après avoir lu les caractères de <code>s</code> un à un.</p>
+<p>Il pourra également être utile d’ajouter un booléen activant un mode <em>debug</em> pour afficher l’état interne du tokenizer à chaque pas.</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-9"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/9/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java, Tokenizer.java</div>
+</div>
+<h4 id="gestion-des-opérateurs-et-parenthèses">Gestion des opérateurs et parenthèses</h4>
+<p>Nous allons maintenant étendre <code>readChar</code> afin de gérer les autres opérations de notre calculatrice.</p>
+<h6 id="exercice-10">Exercice 10</h6>
+<p>Modifier <code>readChar</code> afin de supporter les opérateurs binaires <code>+</code>, <code>-</code>, <code>*</code>, et <code>/</code>.
+ Lors de la lecture d’un opérateur, on commencera par passer à la 
+calculatrice la commande qui correspond au nombre en cours de lecture, 
+puis on lui passera la commande correspondant à l’opérateur courant, et 
+on mettra à jour les autres champs du tokenizer pour en maintenir la 
+cohérence.</p>
+<p>On conseille d’éviter de dupliquer du code. Pour faciliter la mise au
+ point du tokenizer, on pourra factoriser certaines opérations, comme la
+ finalisation de la lecture d’un nombre (lors de la lecture d’une 
+opération).</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-10"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/10/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java, Tokenizer.java</div>
+</div>
+<h6 id="exercice-11">Exercice 11</h6>
+<p>Modifier <code>readChar</code> pour gérer les parenthèses ouvrantes et fermantes.</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-11"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/11/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java, Tokenizer.java</div>
+</div>
+<h4 id="nombres-décimaux-et-nombres-négatifs">Nombres décimaux et nombres négatifs</h4>
+<p>Jusqu’ici, notre tokenizer n’accepte que les nombres entiers et 
+positifs ce qui n’est bien sûr pas satisfaisant. Nous avons repoussé un 
+peu le traitement des autres valeurs car celui-ci complique l’état du 
+tokenizer…</p>
+<h6 id="exercice-12">Exercice 12</h6>
+<p>Modifier <code>readChar</code> pour lire les nombres avec partie décimale (délimitée par le caractère <code>.</code>). On pourra ajouter deux champs à l’état interne du tokenizer :</p>
+<ul>
+<li><p>un booléen <code>isNonIntNum</code> vrai si et seulement si on est en train de lire un nombre décimal, dont on a déjà dépassé le point ; et</p></li>
+<li><p>un entier <code>decimalDigits</code> comptant le nombre de chiffres après ce point.</p></li>
+</ul>
+<p>Il faudra prendre soin aussi de modifier les autres fonctions du tokenizer.</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-12"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/12/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java, Tokenizer.java</div>
+</div>
+<h6 id="exercice-13">Exercice 13</h6>
+<p>Modifier <code>readChar</code> pour lire les nombres négatifs, comme <code>-3</code> ou <code>-.053</code>. Il faudra faire attention au caractère <code>-</code> qui a maintenant deux sens possibles, soit comme opérateur binaire, soit comme comme négation unaire. On note qu’un <code>-</code> observé tout au début de la lecture, ou bien juste après une parenthèse ouvrante, après un caractère <code>=</code>
+ ou après un opérateur binaire décrit nécessairement la négation unaire.
+ On pourra ajouter deux champs à l’état interne du tokenizer :</p>
+<ul>
+<li><p>un boolean <code>isMinUnary</code> vrai si et seulement si une occurrence de <code>-</code> serait vue comme un opérateur unaire ; et</p></li>
+<li><p>un booléen <code>isNeg</code> vrai si et seulement si on est en train de lire un nombre négatif.</p></li>
+</ul>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-13"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/13/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java, Tokenizer.java</div>
+</div>
+<h4 id="ré-initialisation-et-mémoire">Ré-initialisation et mémoire</h4>
+<h6 id="exercice-14">Exercice 14</h6>
+<p>Notre interface textuelle est presque prête. Nous allons maintenant 
+prendre en compte les caractères gérant les deux dernières commandes.</p>
+<p>Modifier <code>readChar</code> afin de traiter le caractère <code>C</code> comme une commande réinitialisant l’état de la calculatrice.</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-14"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/14/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java, Tokenizer.java</div>
+</div>
+<h6 id="exercice-15">Exercice 15</h6>
+<p>Modifier <code>readChar</code> afin de traiter la chaîne <code>$i</code>
+ comme une lecture dans la mémoire comme défini plus haut (on pourra 
+étendre la définition de l’état interne du tokenizer). Cette question 
+étant plus difficile, on pourra la considérer facultative.</p>
+<p>Déposer ici vos fichiers :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-15"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/15/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, Operator.java, Tokenizer.java</div>
+</div>
+<h3 id="une-calculatrice-graphique">Une calculatrice graphique</h3>
+<p>Dans cette dernière partie, nous allons créer une interface graphique
+ (GUI) pour notre calculatrice. Cette seconde interface va transformer 
+des actions de l’utilisateur (actions sur des boutons à l’aide de la 
+souris ou actions sur des touches au clavier) en commandes. Elle repose 
+donc sur un principe similaire à l’interface textuelle, même si la 
+partie visible est bien sûr entièrement différente.</p>
+<h4 id="application-et-fenêtre-graphiques">Application et fenêtre graphiques</h4>
+<p>Nous allons utiliser la bibliothèque <code>javafx</code>. Il vous 
+faudra utiliser plusieurs constructions fournies par cette librairie, et
+ parfois rechercher les classes et méthodes adaptées. Pour cela, vous 
+devrez vous référer à la <a href="https://docs.oracle.com/javase/8/javafx/api/toc.htm">Documentation en ligne de <code>javafx</code></a></p>
+<p>Notre classe étendra la classe <a href="https://docs.oracle.com/javase/8/javafx/api/javafx/application/Application.html"><code>Application</code></a>.
+ Une instance de notre classe sera donc une fenêtre graphique possédant 
+des décorations (bordure, titre, ...) et des boutons permettant de la 
+fermer, la miniaturiser ou l’agrandir. Pour lancer une GUI, une méthode <code>main</code> est nécessaire (comme pour les applications sans GUI). Cette méthode doit appeler avec ses propres arguments la méthode <code>launch</code>, qui est fournie et qu’on n’aura pas besoin de définir. Au travers <code>launch</code>, <code>javafx</code> préparera alors la fenêtre et appellera la méthode <code>start(Stage stage)</code> qu’il nous faut définir. Le code de votre GUI ressemblera donc au code suivant (les parties <code>TODO</code> seront complétées par la suite) :</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode java"><code class="sourceCode java"><span id="cb3-1"><a aria-hidden="true" href="#cb3-1"></a><span class="kw">import</span><span class="im"> javafx.application.Application;</span></span>
+<span id="cb3-2"><a aria-hidden="true" href="#cb3-2"></a><span class="kw">import</span><span class="im"> javafx.stage.Stage;</span>   </span>
+<span id="cb3-3"><a aria-hidden="true" href="#cb3-3"></a><span class="kw">import</span><span class="im"> javafx.scene.*;</span>   </span>
+<span id="cb3-4"><a aria-hidden="true" href="#cb3-4"></a><span class="kw">import</span><span class="im"> javafx.scene.control.*;</span></span>
+<span id="cb3-5"><a aria-hidden="true" href="#cb3-5"></a><span class="kw">import</span><span class="im"> javafx.scene.layout.*;</span></span>
+<span id="cb3-6"><a aria-hidden="true" href="#cb3-6"></a></span>
+<span id="cb3-7"><a aria-hidden="true" href="#cb3-7"></a><span class="kw">public</span> <span class="kw">class</span> GraphicsCalculator <span class="kw">extends</span> Application {   </span>
+<span id="cb3-8"><a aria-hidden="true" href="#cb3-8"></a>    Tokenizer tok;</span>
+<span id="cb3-9"><a aria-hidden="true" href="#cb3-9"></a>    </span>
+<span id="cb3-10"><a aria-hidden="true" href="#cb3-10"></a>    <span class="at">@Override</span></span>
+<span id="cb3-11"><a aria-hidden="true" href="#cb3-11"></a>    <span class="kw">public</span> <span class="dt">void</span> <span class="fu">start</span>(Stage stage) {</span>
+<span id="cb3-12"><a aria-hidden="true" href="#cb3-12"></a>        stage.<span class="fu">show</span>();</span>
+<span id="cb3-13"><a aria-hidden="true" href="#cb3-13"></a>        <span class="co">// </span><span class="al">TODO</span></span>
+<span id="cb3-14"><a aria-hidden="true" href="#cb3-14"></a>        Scene scene = <span class="kw">new</span> <span class="fu">Scene</span>(<span class="kw">new</span> <span class="fu">VBox</span>(<span class="co">/* </span><span class="al">TODO</span><span class="co"> */</span>));</span>
+<span id="cb3-15"><a aria-hidden="true" href="#cb3-15"></a>        stage.<span class="fu">setScene</span>(scene);</span>
+<span id="cb3-16"><a aria-hidden="true" href="#cb3-16"></a>    }</span>
+<span id="cb3-17"><a aria-hidden="true" href="#cb3-17"></a>    </span>
+<span id="cb3-18"><a aria-hidden="true" href="#cb3-18"></a>    <span class="kw">public</span> <span class="dt">static</span> <span class="dt">void</span> <span class="fu">main</span>(<span class="bu">String</span>[] args) {</span>
+<span id="cb3-19"><a aria-hidden="true" href="#cb3-19"></a>        <span class="fu">launch</span>(args);</span>
+<span id="cb3-20"><a aria-hidden="true" href="#cb3-20"></a>    }</span>
+<span id="cb3-21"><a aria-hidden="true" href="#cb3-21"></a>}</span></code></pre></div>
+<p>Si vous avez une erreur de compilation de la forme</p>
+<pre><code>The type 'Application' is not API (restriction on required library rt.jar)</code></pre>
+<p>exécutez les actions suivantes :</p>
+<ul>
+<li><p>Allez dans les propriétés de votre projet (clic droit sur le nom de votre projet, puis <code>Properties</code>) ;</p></li>
+<li><p>Allez dans <code>Java Build Path</code>, puis dans le tab <code>Libraries</code> ;</p></li>
+<li><p>Dépliez <code>JRE System Library</code> et sélectionnez <code>Access rules</code> ;</p></li>
+<li><p>Cliquez sur <code>Edit...</code>, puis sur <code>Add...</code>. Positionnez <code>Resolution</code> sur <code>Accessible</code> et entrez <code>javafx/**</code> dans <code>Rule Pattern</code> ;</p></li>
+<li><p>Validez le tout.</p></li>
+</ul>
+<p>On vous demande de :</p>
+<ol class="example" type="1">
+<li><p>Modifier <code>GraphicsCalculator</code> de manière à changer le titre de votre GUI en utilisant une méthode de <code>stage</code>.</p></li>
+<li><p>Définissez la largeur et la longueur de la fenêtre (par exemple 200x200) en utilisant des méthodes de <code>stage</code>.</p></li>
+</ol>
+<p>La structure de la fenêtre va comme suit : <code>stage</code> contient une <code>Scene scene</code>, qui contient une <code>VBox</code>, boîte d’alignement verticale, au constructeur de laquelle on pourra fournir des <code>HBox</code>s, respectivement horizontales, auxquelles on pourra fournir un <code>Label</code> pour le résultat et des <code>Button</code>s pour les entrées.</p>
+<ol class="example" type="1" start="3">
+<li>Ajouter à votre classe <code>GraphicsCalculator</code> un champ de type <code>Label</code> correspondant à la zone de résultat votre calculatrice et ajouter ce dernier dans une <code>HBox</code>, qui sera la première ligne donnée au constructeur de <code>VBox</code>.</li>
+</ol>
+<h4 id="boutons">Boutons</h4>
+<ol class="example" type="1" start="4">
+<li><p>Ajouter une méthode <code>Button b(char c)</code> (non statique), qui renvoie un nouveau bouton de taille constante, par exemple 30x30, en utilisant <code>setMinSize</code> et <code>setMaxSize</code>. Utilisez-la une fois par caractère nécessaire à votre calculatrice, en répartissant les boutons sur plusieurs lignes <code>HBox</code> en ajoutant ces dernières à <code>VBox</code>.</p></li>
+<li><p>Placer les boutons et la zone de texte de votre calculatrice de manière similaire à <a href="#image">l’image du début de l’énoncé</a>, l’opérateur <code>'$'</code> étant optionnel.</p></li>
+<li><p>Définir une méthode <code>update(char c)</code> qui interprète le caractère <code>c</code> et affiche le résultat dans la zone textuelle.</p></li>
+<li><p>Si <code>b</code> est un bouton, alors <code>b.setOnAction(value -&gt; /*TODO*/);</code> exécutera <code>/*TODO*/</code>
+ à chaque clic du bouton (on appelle cette notation “lambda-notation” et
+ cela correspond à la définition d’une fonction prenant en argument <code>value</code> et qui évalue l’expression qui remplacera <code>/*TODO*/</code>). Faites en sorte qu’appuyer sur un bouton appelle la méthode <code>update</code> avec le caractère correspondant, et testez votre calculatrice.</p></li>
+</ol>
+<h4 id="clavier">Clavier</h4>
+<p>Les événements sont les interactions avec l’utilisateur. Ils rendent 
+par exemple un programme réactif aux clics de souris ou au fait qu’une 
+touche du clavier soit pressée ou relâchée.</p>
+<ol class="example" type="1" start="8">
+<li>Implémenter un gestionnaire d’événements de façon à mettre 
+correctement à jour votre calculatrice lorsqu’une touche du clavier est 
+pressée. Pour cela, on ajoutera l’écouteur d’événements clavier à la 
+scène en cours : <code>scene.setOnKeyTyped(e      -&gt; handlekey(e));</code>. Implémentez la méthode <code>void      handlekey(KeyEvent e)</code> et testez votre calculatrice.</li>
+</ol>
+<p>Déposer ici vos fichiers (le test va échouer, ignorez-le, le but est seulement de fournir les fichiers) :</p>
+<div class="alert alert-primary pt-3">
+<span id="submit-16"></span>
+<div class="alert alert-primary pt-3">
+<form class="form" style="width: 70%;" method="post" enctype="multipart/form-data" action="handins/16/">
+
+  <div class="form-group">
+    <input type="file" class="input-ghost" style="display: none;" multiple="multiple" name="file"><div class="input-group input-file" name="file">
+      <span class="input-group-btn">
+        <button class="btn btn-choose btn-secondary" type="button">Choose</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Choose one or more files..." readonly="readonly" style="cursor: pointer;">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </span>
+    </div>
+    <div class="input-group">
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="files-reuse" value="1" checked="checked">
+        <label class="form-check-label" for="files-reuse">
+          Reuse files from previous submissions
+          <span class="far fa-question-circle" data-toggle="tooltip" title="" data-original-title="Missing required files are taken from last submission of this question."></span>
+        </label>
+      </div>
+    </div>
+    
+  </div>
+</form>
+</div>
+<div class="alert alert-light">Expected files: Calculator.java, GraphicsCalculator.java, Operator.java, Tokenizer.java</div>
+</div>
+
+
+      </main>
+    </div>
+
+    
+
+    
+
+    
+    <script type="text/javascript">
+    var $refresh_status_max = 16;
+    var $refresh_status_cnt = $refresh_status_max;
+
+    function refresh_status() {
+      if ($refresh_status_cnt < $refresh_status_max) {
+        $refresh_status_cnt += 1;
+      } else {
+        $refresh_status_cnt = 0;
+
+        var $url  = '/agns/INF371/TD08/2021/:status/';
+        var $keys = ['ok', 'mb', 'ko'];
+
+        $.ajax($url).done(function(data) {
+          for (var x of $keys) {
+            $('#status-' + x)
+              .text(data[x].length)
+              .attr('data-original-title', data[x].join(', '));
+          }
+        });
+      }
+    }
+
+    $(function() {
+      refresh_status();
+      setInterval(refresh_status, 2000);
+    });
+    </script>
+    
+
+    <script type="text/javascript">
+    $(function() {
+        $("#top-alerts .alert").fadeTo(4000, 500).slideUp(500, function() {
+          $("#top-alerts .alert").slideUp(500);
+        });
+    });
+    </script>
+
+    <script type="text/javascript">
+    $(function() {
+      var clipboard = new ClipboardJS('.copy-button');
+      $('.copy-button').tooltip({ trigger: 'click', placement: 'top' });
+      clipboard.on('success', function(e) {
+        $(e.trigger).tooltip('hide')
+                    .attr('data-original-title', 'Copied')
+                    .tooltip('show');
+        window.setTimeout(function() { $(e.trigger).tooltip('hide'); }, 600);
+      });
+    });
+    </script>
+
+    <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    });
+    </script>
+  
+</body></html>
